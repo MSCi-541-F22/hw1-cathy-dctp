@@ -67,8 +67,6 @@ def process_documents(file_content, output_dir):
         if not is_closing_tag(tag[0]):
             tag_stack.append(tag)
         else:
-            if not tag_stack:
-                print(tag)
             open_tag = tag_stack.pop()
             if tag[0] == "</DOCNO>":
                 cur_doc.docno = file_content[open_tag.end() + 1: tag.start() - 1]
@@ -82,7 +80,6 @@ def process_documents(file_content, output_dir):
             if tag[0] == "</DOC>":
                 # create raw file
                 raw_doc = file_content[open_tag.start() : tag.end()]
-                cur_doc.rawDoc = raw_doc
                 raw_file_path = f'{output_dir}/{cur_doc.year}/{cur_doc.month}/{cur_doc.date}/{cur_doc.docno}'
                 cur_doc.rawFilePath = raw_file_path
                 with safe_open_w(raw_file_path) as f:
