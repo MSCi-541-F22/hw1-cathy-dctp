@@ -31,12 +31,12 @@ def verify_output_dir(arg):
 def is_closing_tag(tag):
     return True if tag[1] == '/' else False
 
-       
+# https://stackoverflow.com/questions/23793987/write-file-to-a-directory-that-doesnt-exist       
 def safe_open_w(path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     return open(path, 'w')
 
-
+# https://stackoverflow.com/questions/38834378/path-to-a-directory-as-argparse-argument
 def process_argument():
     parser = argparse.ArgumentParser()
     parser.add_argument("data_filepath", type=verify_datapath, help="The original data file path")
@@ -96,6 +96,7 @@ def process_documents(file_content, output_dir):
 
 def write_metadata_file(dicts, output_dir):
     # Get a list of document objects, write into a metadata file
+    # https://stackoverflow.com/questions/11218477/how-can-i-use-pickle-to-save-a-dict-or-any-other-python-object
     with open(f'{output_dir}/metadata.pkl', 'wb') as handle:
         pickle.dump(dicts, handle, protocol = pickle.HIGHEST_PROTOCOL)
     
