@@ -9,11 +9,18 @@ Description:
 - Accepts two command line arguments: a path to the latimes.gz file and a path to a directory where the documents and metadata will be stored 
 - The directory where the documents and metadata are stored must not already exist 
 
-    `/usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/IndexEngine.py" latimes.gz output`
+    `> /usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/IndexEngine.py" latimes.gz output`
+
+- Can use this command to get help with the command arguments 
+
+    `> /usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/IndexEngine.py" -h`
 
 ### GetDoc.py
 - Used to retrieve a document and its metadata
 - Accepts three command line arguments: a path to the location of the documents and metadata store, find_type ("id" or "docno"), and either the integer id or a document or a DOCNO, depending on the specified find_type 
 
-    `/usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/GetDoc.py" output docno LA010189-0018`
+    `> /usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/GetDoc.py" output docno LA010189-0018`
 
+- Can use this command to get help with the command arguments 
+
+    `> /usr/bin/python3 "/Users/cathyp/Documents/fall 2022/541/hw1-cathy-dctp/IndexEngine.py" -h`
